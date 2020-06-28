@@ -1,0 +1,54 @@
+{
+    "name": "datagit/my-package-test",
+    "description": "my-package-test",
+    "keywords": [
+        "datagit",
+        "my-package-test"
+    ],
+    "homepage": "https://github.com/datagit/my-package-test",
+    "license": "MIT",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Dat",
+            "email": "datagit@yahoo.com",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "php": "^7.1",
+        "illuminate/support": "^6.0"
+    },
+    "require-dev": {
+        "orchestra/testbench": "^4.0",
+        "phpunit/phpunit": "^8.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "Datagit\\MyPackageTest\\": "src"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Datagit\\MyPackageTest\\Tests\\": "tests"
+        }
+    },
+    "scripts": {
+        "test": "vendor/bin/phpunit",
+        "test-coverage": "vendor/bin/phpunit --coverage-html coverage"
+
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Datagit\\MyPackageTest\\MyPackageTestServiceProvider"
+            ],
+            "aliases": {
+                "MyPackageTest": "Datagit\\MyPackageTest\\MyPackageTestFacade"
+            }
+        }
+    }
+}
